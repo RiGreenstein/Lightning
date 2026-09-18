@@ -1,4 +1,4 @@
- import java.util.ArrayList;
+import java.util.ArrayList;
 
 int fadeSpeed = 15;
 int xChange = 0;
