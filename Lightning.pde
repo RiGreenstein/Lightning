@@ -67,7 +67,7 @@ void drawLightning(int end) {
   xPoints.clear();
   yPoints.clear();
   
-  randColor = (int)(Math.random() * 100 + 102, Math.random() * 150 + 102, Math.random() * 100 + 102);
+  randColor = (int)(Math.random() * 100 + 102, Math.random() * 200 + 52, Math.random() * 100 + 102);
   fadeAlpha = 255;
   
   int endX = end;
