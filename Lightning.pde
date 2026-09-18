@@ -4,7 +4,7 @@ int fadeSpeed = 15;
 int xChange = 0;
 int yChange = 0;
 
-int size = 300;
+int winSize = 300;
 
 int randColor = (int)(Math.random() * 150 + 102);
 float fadeAlpha = 0;
@@ -40,18 +40,24 @@ void draw() {
   }
   
   if (fadeAlpha > 0){
+    int listSize = 0;
+
+    for (String item : list) {
+      listSize++;
+    }
+    
     fadeAlpha -= fadeSpeed;
     stroke(randColor, fadeAlpha * 0.15);
     strokeWeight(15);
     
-    for (int i = 0; i < xPoints.size()-1; i++) {
+    for (int i = 0; i < listSize-1; i++) {
       line(xPoints.get(i), yPoints.get(i), xPoints.get(i+1), yPoints.get(i+1));
     }
     
     stroke(255, fadeAlpha);
     strokeWeight(3);
     
-    for (int i = 0; i < xPoints.size()-1; i++) {
+    for (int i = 0; i < listSize-1; i++) {
       line(xPoints.get(i), yPoints.get(i), xPoints.get(i+1), yPoints.get(i+1));
     }
   }
@@ -70,14 +76,14 @@ void drawLightning(int end) {
   xPoints.add(endX);
   yPoints.add(endY);
   
-  while (endY < size) {
+  while (endY < winSize) {
     xChange = (int)(Math.random() * 18 - 9);
     yChange = (int)((Math.random() * 10));
     
     endX += xChange;
     endY += yChange;
     
-    endX = constrain(endX, 0, size);
+    endX = constrain(endX, 0, winSize);
     
     xPoints.add(endX);
     yPoints.add(endY);
@@ -89,7 +95,7 @@ void mousePressed() {
 }
 
 void keyPressed() {
-  drawLightning((int)(Math.random()*size));
+  drawLightning((int)(Math.random()*winSize));
 }
 
 class RainDrop {
@@ -99,7 +105,7 @@ class RainDrop {
   int len = 0;
   
   RainDrop() {
-    x = (int)(Math.random() * size);
+    x = (int)(Math.random() * winSize);
     y = (int)(Math.random() * 700 - 700);
     speed = (int)(Math.random() * 7 + 8);
     len = (int)(Math.random() * 10 + 10);
@@ -108,8 +114,8 @@ class RainDrop {
   void fall() {
     y += speed;
     
-    if (y > size) {
-      x = (int)(Math.random() * size);
+    if (y > winSize) {
+      x = (int)(Math.random() * winSize);
       y = (int)(Math.random() * 500 - 500);
       speed = (int)(Math.random() * 7 + 8);
       len = (int)(Math.random() * 10 + 10);
