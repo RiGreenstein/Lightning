@@ -42,7 +42,7 @@ void draw() {
   if (fadeAlpha > 0){
     int listSize = 0;
 
-    for (String item : list) {
+    for (String item : xPoints) {
       listSize++;
     }
     
