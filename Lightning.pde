@@ -4,7 +4,7 @@ int fadeSpeed = 15;
 int xChange = 0;
 int yChange = 0;
 
-int winSize = 300;
+int winSize = 1000;
 
 int randColor = (int)(Math.random() * 150 + 102);
 float fadeAlpha = 0;
@@ -14,10 +14,10 @@ ArrayList<Integer> yPoints = new ArrayList<Integer>();
 
 //Raindrops
 ArrayList<RainDrop> rain = new ArrayList<RainDrop>();
-int totalDrops = 150;
+int totalDrops = 300;
 
 void setup() {
-  size(300,300);
+  size(1000,1000);
   strokeWeight(3);
   background(0);
   
