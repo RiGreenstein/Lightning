@@ -47,7 +47,7 @@ void draw() {
     }
     
     fadeAlpha -= fadeSpeed;
-    stroke(randColor*0.7, Math.min(255, randColor*1.5), randColor*0.7, fadeAlpha * 0.15);
+    stroke(randColor, fadeAlpha * 0.15);
     strokeWeight(15);
     
     for (int i = 0; i < listSize-1; i++) {
